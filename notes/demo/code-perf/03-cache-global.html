@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" id="btn1">
+  <input type="button" id="btn２">
+  <input type="button" id="btn３">
+  <input type="button" id="btn４">
+  <input type="button" id="btn５">
+  <input type="button" id="btn６">
+
+  <script>
+    function getBtn() {
+      let btn1 = document.getElementById('btn1')
+      let btn2 = document.getElementById('btn2')
+      let btn3 = document.getElementById('btn3')
+      let btn4 = document.getElementById('btn4')
+      let btn5 = document.getElementById('btn5')
+      let btn6 = document.getElementById('btn6')
+    }
+
+    function getBtn2() {
+      let doc = document // 缓存全局变量
+
+      let btn1 = doc.getElementById('btn1')
+      let btn2 = doc.getElementById('btn2')
+      let btn3 = doc.getElementById('btn3')
+      let btn4 = doc.getElementById('btn4')
+      let btn5 = doc.getElementById('btn5')
+      let btn6 = doc.getElementById('btn6')
+    }
+  </script>
+</body>
+
+</html>

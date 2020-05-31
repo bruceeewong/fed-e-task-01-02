@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">Add</button>
+
+  <script>
+    var btn = document.getElementById('btn')
+
+    var tmp // detached dom object
+
+    btn.addEventListener('click', function () {
+      var count = 100
+      var ul = document.createElement('ul')
+      for (var i = 0; i < count; i++) {
+        var li = document.createElement('li')
+        ul.appendChild(li)
+      }
+      tmp = ul
+      ul = null // 清除分离dom
+    })
+  </script>
+</body>
+
+</html>

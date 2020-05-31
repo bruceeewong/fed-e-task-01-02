@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="source">111</p>
+  <script>
+    var source = document.getElementById('source');
+
+    (function () {
+      for (var i = 0; i < 10; i++) {
+        var p = document.createElement('p')
+        p.innerHTML = 111
+        document.body.appendChild(p)
+      }
+    })();
+
+    (function () {
+      for (var i = 0; i < 10; i++) {
+        var p = source.cloneNode(false)
+        document.body.appendChild(p)
+      }
+    })();
+  </script>
+</body>
+
+</html>
