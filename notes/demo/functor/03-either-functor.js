@@ -21,7 +21,7 @@ class Right {
   }
 
   static of(value) {
-    return new Left(value);
+    return new Right(value);
   }
 
   map(fn) {

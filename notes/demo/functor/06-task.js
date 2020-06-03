@@ -13,7 +13,7 @@ function readFile(filename) {
   });
 }
 
-readFile("../package1.json")
+readFile("../package.json")
   .map(split("\n"))
   .map(find((x) => x.includes("version")))
   .run()

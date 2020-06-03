@@ -2,6 +2,7 @@
 
 const { compose, curry } = require("folktale/core/lambda");
 const { toUpper, first } = require("lodash/fp");
+const MayBe = require("folktale/maybe");
 
 (function () {
   // what is arity
@@ -16,4 +17,15 @@ const { toUpper, first } = require("lodash/fp");
 (function () {
   let f = compose(toUpper, first);
   console.log(f(["a", "b", "c"]));
+})();
+
+(function () {
+  const toRMB = (s) =>
+    MayBe.of(s)
+      .map((s) => s.replace(/\$/, ""))
+      .map((s) => s * 7)
+      .map((s) => s.toFixed(2))
+      .getOrElse("nothing");
+
+  console.log(toRMB("$299.99"));
 })();

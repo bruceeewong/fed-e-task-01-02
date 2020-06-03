@@ -25,6 +25,17 @@ class Container {
 
 (function () {
   // 传null出现不纯的例子, null没有toUpperCase方法
-  const result = Container.of(null).map((x) => x.toUpperCase);
-  console.log(result);
+  // const result = Container.of(null).map((x) => x.toUpperCase);
+  // console.log(result);
+})();
+
+// 把美元转换成人民币　'$299.99' -->
+(function () {
+  const toRMB = (s) =>
+    new Container(s)
+      .map((s) => s.replace(/\$/, ""))
+      .map((s) => s * 7)
+      .map((s) => s.toFixed(2));
+
+  console.log(toRMB("$299.99"));
 })();
